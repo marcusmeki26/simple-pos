@@ -2,6 +2,7 @@ package Components;
 
 import Components.Panels.CategoryPanel;
 import Components.Panels.HeaderPanel;
+import Components.Panels.InvoicePanel;
 import Components.Panels.ProductsPanel;
 
 import javax.swing.*;
@@ -21,8 +22,10 @@ public class POSFrame extends JFrame {
 
     public void initComponents(){
         this.add(new HeaderPanel(), BorderLayout.NORTH);
-        ProductsPanel productsPanel = new ProductsPanel();
+        InvoicePanel invoicePanel = new InvoicePanel();
+        ProductsPanel productsPanel = new ProductsPanel(invoicePanel);
         this.add(productsPanel, BorderLayout.CENTER);
         this.add(new CategoryPanel(productsPanel), BorderLayout.WEST);
+        this.add(invoicePanel, BorderLayout.EAST);
     }
 }

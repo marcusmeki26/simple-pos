@@ -1,6 +1,7 @@
 package Components;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 public class BaseLabel extends JLabel {
@@ -10,22 +11,22 @@ public class BaseLabel extends JLabel {
     // parameter only for string
     public BaseLabel(String textInput){
         super(textInput);
-        this.setForeground(Color.white);
-        this.setFont(new Font("Arial", Font.PLAIN, 12));
+        setForeground(Color.white);
+        setFont(new Font("Arial", Font.PLAIN, 12));
     }
 
     // parameter for string and font size
     public BaseLabel(String textInput, int size){
         super(textInput);
-        this.setForeground(Color.white);
-        this.setFont(new Font("Arial", Font.PLAIN , size));
+        setForeground(Color.white);
+        setFont(new Font("Arial", Font.PLAIN , size));
     }
 
     // parameter for string, font weight and font size
     public BaseLabel(String textInput, int fontWeight, int size){
         super(textInput);
-        this.setForeground(Color.white);
-        this.setFont(new Font("Arial", fontWeight, size));
+        setForeground(Color.white);
+        setFont(new Font("Arial", fontWeight, size));
     }
 
     // parameter for adding Icon
@@ -47,5 +48,15 @@ public class BaseLabel extends JLabel {
         clickedLabel.setBackground(Color.black);
         clickedLabel.setForeground(Color.white);
 
+    }
+
+    public BaseLabel withPadding(Border border){
+        setBorder(border);
+        return this;
+    }
+
+    public BaseLabel changeColor(Color color){
+        setForeground(color);
+        return this;
     }
 }
